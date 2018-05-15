@@ -119,7 +119,7 @@ app.get('/get2',function(req,res){
 
 
     for(var i = 0; i < arr2.length; i++){ //นับว่าใน arr1 มีข้อมูลใน array กี่ตัว แล้วทำ loop ตามจำนวนนั้น
-      console.log(arr2[i]); //แสดง totalX
+      //console.log(arr2[i]);
       unirest.get(arr2[i],function(req,res){
         //var dataX= req.raw_body;
         var dataJ ={
@@ -137,16 +137,29 @@ app.get('/get2',function(req,res){
       var totalX = [];
 
       console.log("-----------------------------------------------------------");
-      for(var i = 0; i < data_10.length; i++){ //นับว่าใน arr1 มีข้อมูลใน array กี่ตัว แล้วทำ loop ตามจำนวนนั้น
-          totalX.push(data_10[i].time); //เอาข้อมูลใน array ของ arr1 เข้าไปใน totalX
+      for(var i = 0; i < data_10.length; i++){
+          totalX.push(data_10[i].time);
           console.log("\n",totalX);
       }
 
-      totalX.sort(function(a, b){ //ในกรณีที่ต้องการเรียงข้อมูลที่เป็นตัวเลขเราจำเป็นต้องเขียน callback function เพิ่มเข้าไปใน function sort เพื่อให้การเรียงข้อมูลอยู่ในรูปแบบที่ถูกต้อง
+      totalX.sort(function(a, b){
         return a-b}
       );
+       console.log("\n"+totalX);
 
-      console.log("\n"+totalX); // 1,4,7,9,10,28,35,200
+
+      // console.log("\n");
+      //
+      // console.log("\n");
+      // console.log(JSON.stringify(totalX));
+      //
+      // const ordered = {};
+      // Object.keys(totalX).sort().forEach(function(key) {
+      //   ordered[key] = totalX[key];
+      // });
+      // console.log("\n");
+      // console.log(JSON.stringify(ordered));
+
 
   },1500);
 
