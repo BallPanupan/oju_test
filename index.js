@@ -55,25 +55,23 @@ app.get('/get',function(req,res){
 
       console.log("All 10  = \n",data_sort_ten);
   });
-  setTimeout(function(){
-    var sort_x = [];
-    console.log("get OK");
-    var data2;
 
-    unirest.get('https://testnet.blockexplorer.com/api/tx/f406755db24f11343184cf60135610ab6e06e384f87568269274d6705ea55a67',function(req,res){
+  var sort_x = [];
+
+    unirest.get('https://testnet.blockexplorer.com/api/tx/34862264c23b471a8b2e7199e2b3d477bff72cf526d0bffb6b2de83ff6f596a2 ',function(req,res){
       //var dataX= req.raw_body;
-      data2 = [
-        {"txid" : req.body.txid,
-        "time" : req.body.time},
-      ]
+      var dataJ ={
+        txid : req.body.txid,
+        time : req.body.time
+      };
+
       console.log("\n");
-      sort_x.push(data2);
-      console.log(data2);
+      sort_x.push(dataJ);
+
+      console.log(sort_x[0]);
+      console.log("get OK");
       //dataX.push(req.raw_body);
     });
-
-
-  },1000);
   return;
 });
 
@@ -81,11 +79,11 @@ app.get('/get2',function(req,res){
   var data2;
   unirest.get('https://testnet.blockexplorer.com/api/tx/34862264c23b471a8b2e7199e2b3d477bff72cf526d0bffb6b2de83ff6f596a2 ',function(req,res){
     //var dataX= req.raw_body;
-    data2 = [
-      {"txid" : req.body.txid,
-      "time" : req.body.time},
-    ]
-    console.log(data2);
+    // data2 = [
+    //   {"txid" : req.body.txid,
+    //   "time" : req.body.time},
+    // ]
+    console.log(req.raw_body);
     //dataX.push(req.raw_body);
   });
 
