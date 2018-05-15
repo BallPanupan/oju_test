@@ -138,7 +138,7 @@ app.get('/get2',function(req,res){
 
       console.log("-----------------------------------------------------------");
       for(var i = 0; i < data_10.length; i++){
-          totalX.push(data_10[i].time);
+          totalX.push(data_10[i]);
           console.log("\n",totalX);
       }
 
@@ -146,6 +146,15 @@ app.get('/get2',function(req,res){
         return a-b}
       );
        console.log("\n"+totalX);
+
+
+       totalX.sort(function(a, b) {
+           return a.time > b.time;
+       });
+
+       totalX.sort();
+
+       console.log(totalX);
 
 
       // console.log("\n");
