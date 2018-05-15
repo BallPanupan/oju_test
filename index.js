@@ -93,6 +93,19 @@ app.get('/get',function(req,res){
 });
 
 app.get('/get2',function(req,res){
+
+  unirest.get('https://testnet.blockexplorer.com/api/tx/8b609f72096aefaa36eb5eaf0928e97d8b28591015079e775e005c0b469fd5ad',function(req,res){
+    //var dataX= req.raw_body;
+    // var dataJ ={
+    //   txid : req.body.txid,
+    //   time : req.body.time
+    // };
+
+    console.log(req);
+    //dataX.push(req.raw_body);
+  });
+
+
   data_10 = [];
   arr2 = [];
     var A1 = "https://testnet.blockexplorer.com/api/tx/34862264c23b471a8b2e7199e2b3d477bff72cf526d0bffb6b2de83ff6f596a2";
